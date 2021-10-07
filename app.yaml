@@ -1,0 +1,30 @@
+runtime: php
+env: flex
+
+runtime_config:
+  document_root: public
+
+# Ensure we skip ".env", which is only for local development
+skip_files:
+  - .env
+
+env_variables:
+  # Put production environment variables here.
+  APP_LOG: errorlog
+  APP_KEY: base64:dM5xPIh4I9wpbAHqv+SVaIZCwvdyMdQNqLZg6xlprK4=
+  APP_URL: http://localhost
+  URL_APP: https://drs-psp-web.appspot.com
+
+  CACHE_DRIVER: file
+  SESSION_DRIVER: cookie
+  ## Set these environment variables according to your CloudSQL configuration.
+  DB_HOST: 127.0.0.1
+  DB_DATABASE: laravel
+  DB_USERNAME: root
+  DB_PASSWORD: LOLbug72@
+  DB_SOCKET: "/cloudsql/sacweb-250412:us-central1:laravel"
+
+beta_settings:
+    # for Cloud SQL, set this value to the Cloud SQL connection name,
+    # e.g. "project:region:cloudsql-instance"
+    cloud_sql_instances: "sacweb-250412:us-central1:laravel"
